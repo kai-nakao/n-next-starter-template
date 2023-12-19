@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className=" flex bg-gray-500 h-14 px-4 items-center">
+    <header className="flex h-14 px-4 items-center shadow-sm bg-white">
       <h1>Group</h1>
     </header>
   );
