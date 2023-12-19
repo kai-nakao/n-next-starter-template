@@ -10,6 +10,12 @@
           "allowReferenceFrom": ["src/features/*/components/index.tsx"],
           // features/*/components/ any file can import other files from the same folder
           "allowSameModule": true
+        },
+        {
+          "module": "src/features/*/functions/**/*",
+          "allowReferenceFrom": ["src/features/*/components/**/*"],
+          // features/*/components/ any file can import other files from the same folder
+          "allowSameModule": true
         }
       ]
     ]
