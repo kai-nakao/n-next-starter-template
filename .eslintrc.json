@@ -1,6 +1,23 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:storybook/recommended"
-  ]
+  "extends": ["next/core-web-vitals", "plugin:storybook/recommended"],
+  "plugins": ["strict-dependencies"],
+  "rules": {
+    "strict-dependencies/strict-dependencies": [
+      "error",
+      [
+        {
+          "module": "src/features/*/components/**/*",
+          "allowReferenceFrom": ["src/features/*/components/index.tsx"],
+          // features/*/components/ any file can import other files from the same folder
+          "allowSameModule": true
+        },
+        {
+          "module": "src/features/*/functions/**/*",
+          "allowReferenceFrom": ["src/features/*/components/**/*"],
+          // features/*/components/ any file can import other files from the same folder
+          "allowSameModule": true
+        }
+      ]
+    ]
+  }
 }
