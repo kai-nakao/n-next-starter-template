@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { likeKeys } from './key';
+
 import { getLikes } from './function';
+import { likeKeys } from './key';
 import { getTodosSelector } from './selector';
 
 export const useGetLikes = () => {

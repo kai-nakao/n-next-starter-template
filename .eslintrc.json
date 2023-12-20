@@ -1,7 +1,23 @@
 {
   "extends": ["next/core-web-vitals", "plugin:storybook/recommended"],
-  "plugins": ["strict-dependencies"],
+  "plugins": ["strict-dependencies", "unused-imports"],
   "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "object",
+          "type",
+          "index"
+        ],
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "newlines-between": "always"
+      }
+    ],
     "strict-dependencies/strict-dependencies": [
       "error",
       [
@@ -22,6 +38,7 @@
           "allowSameModule": true
         }
       ]
-    ]
+    ],
+    "unused-imports/no-unused-imports": "warn"
   }
 }
