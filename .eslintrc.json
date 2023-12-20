@@ -1,6 +1,6 @@
 {
   "extends": ["next/core-web-vitals", "plugin:storybook/recommended"],
-  "plugins": ["strict-dependencies"],
+  "plugins": ["strict-dependencies", "unused-imports"],
   "rules": {
     "strict-dependencies/strict-dependencies": [
       "error",
