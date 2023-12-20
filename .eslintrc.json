@@ -37,6 +37,7 @@
           "allowSameModule": true
         }
       ]
-    ]
+    ],
+    "unused-imports/no-unused-imports": "warn"
   }
 }
