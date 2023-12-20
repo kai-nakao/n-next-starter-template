@@ -14,7 +14,8 @@
           "type",
           "index"
         ],
-        "alphabetize": { "order": "asc", "caseInsensitive": true }
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "newlines-between": "always"
       }
     ],
     "strict-dependencies/strict-dependencies": [
