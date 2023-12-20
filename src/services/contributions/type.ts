@@ -1,6 +1,6 @@
-import { User } from '../../domain/user';
+import { User } from '../../domain/user'
 
 export type GetLikesResponse = {
-  created_at: string;
-  user: User;
-}[];
+  created_at: string
+  user: User
+}[]
