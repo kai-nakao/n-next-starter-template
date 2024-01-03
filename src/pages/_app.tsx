@@ -1,4 +1,3 @@
-import { Footer } from '@/features/Layout/Footer'
 import { Header } from '@/features/Layout/Header'
 
 import '@/styles/globals.css'
@@ -9,7 +8,6 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Header />
       <Component {...pageProps} />
-      <Footer />
     </>
   )
 }
