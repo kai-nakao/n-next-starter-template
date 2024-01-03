@@ -1,4 +1,5 @@
-import Header from '@/features/Layout/Header'
+import { Footer } from '@/features/Layout/Footer'
+import { Header } from '@/features/Layout/Header'
 
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
@@ -8,6 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </>
   )
 }
