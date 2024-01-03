@@ -1,4 +1,4 @@
-import { User } from '@/domain/user'
+import { User } from '@/models/user'
 
 export type GetLikesResponse = {
   created_at: string
