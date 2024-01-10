@@ -1,9 +1,9 @@
-import { MemberSection } from './MemberSection'
+import { ChartSection } from './ChartSection'
 
 export const RootPage = () => {
   return (
-    <main>
-      <MemberSection />
+    <main className="flex justify-center">
+      <ChartSection />
     </main>
   )
 }
