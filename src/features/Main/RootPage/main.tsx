@@ -5,7 +5,9 @@ export const RootPage = () => {
   return (
     <main className="flex flex-col justify-center">
       <CitiesSection />
-      <ChartSection />
+      <section className="flex justify-center">
+        <ChartSection />
+      </section>
     </main>
   )
 }

@@ -5,10 +5,10 @@ import { valueFormatter } from './functions/valueFormatter'
 
 export const ChartSection = () => {
   return (
-    <Card>
-      <Title>Export/Import Growth Rates (1970 to 2021)</Title>
+    <Card className="w-10/12">
+      <Title>xx市の人口増減グラフ</Title>
       <LineChart
-        className="mt-6"
+        className="h-96"
         data={chartdata}
         index="year"
         categories={['Export Growth Rate', 'Import Growth Rate']}
