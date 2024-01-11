@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { CheckBox } from './CheckBox'
+
 export const CitiesSection = () => {
   return (
     <fieldset className="flex flex-col items-center justify-center">
@@ -8,24 +10,9 @@ export const CitiesSection = () => {
         <legend>Choose your interests</legend>
       </div>
       <section className="m-10 flex gap-4">
-        <div>
-          <input type="checkbox" id="tamano" name="city" value="tamano" />
-          <label htmlFor="tamano">玉野市</label>
-        </div>
-        <div>
-          <input type="checkbox" id="okayama" name="city" value="okayama" />
-          <label htmlFor="okayama">岡山市</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="kurasiki"
-            name="city"
-            value="kurasiki
-		"
-          />
-          <label htmlFor="kurasiki">倉敷市</label>
-        </div>
+        <CheckBox value="tamano" cityName="玉野" />
+        <CheckBox value="okayama" cityName="岡山" />
+        <CheckBox value="kurasiki" cityName="倉敷" />
       </section>
     </fieldset>
   )
