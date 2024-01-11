@@ -2,16 +2,19 @@ import React from 'react'
 
 export const CitiesSection = () => {
   return (
-    <fieldset className="flex justify-center">
-      <legend>Choose your interests</legend>
+    <fieldset className="flex flex-col items-center justify-center">
+      {/* legend html  differs css style depend on browser */}
+      <div>
+        <legend>Choose your interests</legend>
+      </div>
       <section className="m-10 flex gap-4">
         <div>
           <input type="checkbox" id="tamano" name="city" value="tamano" />
-          <label htmlFor="city">玉野市</label>
+          <label htmlFor="tamano">玉野市</label>
         </div>
         <div>
           <input type="checkbox" id="okayama" name="city" value="okayama" />
-          <label htmlFor="city">岡山市</label>
+          <label htmlFor="okayama">岡山市</label>
         </div>
         <div>
           <input
@@ -21,7 +24,7 @@ export const CitiesSection = () => {
             value="kurasiki
 		"
           />
-          <label htmlFor="city">倉敷市</label>
+          <label htmlFor="kurasiki">倉敷市</label>
         </div>
       </section>
     </fieldset>
