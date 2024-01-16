@@ -1,11 +1,9 @@
 import React from 'react'
 
-const Header = () => {
+export const Header = () => {
   return (
-    <header className="flex h-14 items-center bg-white px-4 shadow-sm">
-      <h1>Group</h1>
+    <header className="flex h-16 items-center bg-gray-50 px-4 shadow-sm">
+      <h1>Population increase/decrease</h1>
     </header>
   )
 }
-
-export default Header
