@@ -1,9 +1,12 @@
 import axios from 'axios'
 
 import { populationRatioURL } from './const'
-import { ChartResponse } from './type'
 
-export const getPopulationRatio = async (): Promise<ChartResponse> => {
-  const res = await axios.get(populationRatioURL)
-  return res.data
+export const getPopulationRatio = async (): Promise<any> => {
+  const response = await axios.get(populationRatioURL, {
+    headers: {
+      'X-API-KEY': process.env.API_KEY,
+    },
+  })
+  return response.data
 }
