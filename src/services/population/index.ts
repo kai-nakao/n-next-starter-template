@@ -17,9 +17,9 @@ export const useChartData = ({ initialData }: { initialData?: any }) => {
     staleTime: 1000 * 5,
     initialData: initialData,
   })
-  const lineData = data?.result?.line?.data
+
   return {
-    lineData,
+    data,
     isPending,
     isError,
   }
