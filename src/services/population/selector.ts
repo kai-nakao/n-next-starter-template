@@ -1,5 +1,3 @@
-import { ChartResponse } from './type'
-
-export const getRatioSelector = (data: ChartResponse) => {
+export const getRatioSelector = (data: any) => {
   return data
 }
