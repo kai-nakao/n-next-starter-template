@@ -1,3 +1,3 @@
 export const ratioKeys = {
-  all: ['ratio'] as const,
+  getRatio: ['ratio'] as const,
 } as const

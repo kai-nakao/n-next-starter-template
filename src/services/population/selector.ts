@@ -1,3 +1,3 @@
 export const getRatioSelector = (data: any) => {
-  return data
+  return data?.result?.line?.data
 }
