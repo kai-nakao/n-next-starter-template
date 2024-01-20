@@ -25,7 +25,8 @@
     "next": "12.3.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-query": "^3.39.3"
+    "react-query": "^3.39.3",
+    "react-shimmer": "^3.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.4",

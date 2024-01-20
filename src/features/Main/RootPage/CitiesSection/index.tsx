@@ -1,5 +1,6 @@
 import { useAtom } from 'jotai'
 import React from 'react'
+import { Shimmer } from 'react-shimmer'
 
 import { useCityList } from '@/services/city'
 
@@ -8,8 +9,14 @@ import { CheckBox } from './CheckBox'
 
 export const CitiesSection = () => {
   const [selectedCity, setSelectedCity] = useAtom(selectedCityAtom)
+  const { data, isPending } = useCityList({})
+  if (isPending)
+    return (
+      <div className="flex justify-center">
+        <Shimmer className="" width={500} height={300} />
+      </div>
+    )
 
-  const { data } = useCityList({})
   return (
     <fieldset className="flex flex-col items-center justify-center">
       {/* legend html  differs css style depend on browser */}
