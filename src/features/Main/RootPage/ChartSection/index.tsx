@@ -22,6 +22,7 @@ export const ChartSection = () => {
       <LineChart
         className="h-96"
         data={data}
+        noDataText="データ取得中..."
         index="year"
         categories={['value']}
         colors={['emerald']}
