@@ -18,8 +18,6 @@ export const useCityList = ({ initialData }: { initialData?: any }) => {
     initialData: initialData,
   })
 
-  console.log('selector後のデータ区データなかったら成功', data)
-
   return {
     data,
     isPending,
