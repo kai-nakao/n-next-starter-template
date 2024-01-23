@@ -1,5 +1,5 @@
 export const getLIndustrySelector = (data: any) => {
-  const cityData = data?.result
+  const lIndustryData = data?.result
 
-  return cityData
+  return lIndustryData
 }
