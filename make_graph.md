@@ -1,4 +1,4 @@
-### 人口増減グラフ
+<!-- ### 人口増減グラフ
 
 ```mermaid
 sequenceDiagram
@@ -12,7 +12,7 @@ sequenceDiagram
 	Note right of web: atomsのcitycodeが変更されたらapi取得する？
 	api->>web: response api
 	web->>user: グラフ表示
-```
+``` -->
 
 ### 賃金グラフ
 
@@ -25,7 +25,7 @@ sequenceDiagram
     user->>web: サイトに訪問
 	web->>api: 産業大分類コードを取得(✅)
 	api->>web: response api(✅)
-	web->>user: 産業大区分をuserに表示
+	web->>user: 産業大区分をuserに表示(✅)
 	user->>web: 産業大区分を選択(checkboxにcheck)
 	web->>api: その大区分で中区分のデータ一覧取得依頼
 	api->>web: response api
