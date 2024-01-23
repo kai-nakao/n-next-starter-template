@@ -4,7 +4,7 @@ import { useAtom } from 'jotai'
 import { useCityList } from '@/services/city'
 import { useChartData } from '@/services/population'
 
-import { selectedCityAtom } from '../CitiesSection/atoms/selectedCity'
+import { selectedCityAtom } from '../../../../atoms/selectedCity'
 
 export const ChartSection = () => {
   const { data } = useChartData({})
@@ -14,7 +14,7 @@ export const ChartSection = () => {
 
   // get city name from city code(atom)
   const cityName =
-    cityList?.find((city) => city.cityCode === selectedCity)?.cityName ||
+    cityList?.find((city: City) => city.cityCode === selectedCity)?.cityName ||
     '未選択'
   return (
     <Card className="w-10/12">

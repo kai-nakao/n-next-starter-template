@@ -1,13 +1,13 @@
 type CheckBoxProps = {
   value: string
-  cityName: string
+  name: string
   selected: boolean
   onSelect: () => void
 }
 
 export const CheckBox = ({
   value,
-  cityName,
+  name,
   selected,
   onSelect,
 }: CheckBoxProps) => {
@@ -16,12 +16,12 @@ export const CheckBox = ({
       <input
         type="checkbox"
         id={value}
-        name="city"
+        name={name}
         value={value}
         checked={selected}
         onChange={onSelect}
       />
-      <label htmlFor={value}>{cityName}</label>
+      <label htmlFor={value}>{name}</label>
     </div>
   )
 }

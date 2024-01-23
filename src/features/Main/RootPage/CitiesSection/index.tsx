@@ -4,7 +4,7 @@ import { Shimmer } from 'react-shimmer'
 
 import { useCityList } from '@/services/city'
 
-import { selectedCityAtom } from './atoms/selectedCity'
+import { selectedCityAtom } from '../../../../atoms/selectedCity'
 import { CheckBox } from '../../SharedComponents/CheckBox'
 
 export const CitiesSection = () => {
@@ -29,7 +29,7 @@ export const CitiesSection = () => {
             <CheckBox
               key={index}
               value={city.cityCode}
-              cityName={city.cityName}
+              name={city.cityName}
               selected={selectedCity === city.cityCode}
               onSelect={() => setSelectedCity(city.cityCode)}
             />
