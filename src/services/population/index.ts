@@ -12,7 +12,11 @@ const fetchPopulationRatio = async (cityCode: string) => {
   return response.data
 }
 
-export const useChartData = ({ initialData }: { initialData?: any }) => {
+export const usePopulationChartData = ({
+  initialData,
+}: {
+  initialData?: any
+}) => {
   const [selectedCity] = useAtom(selectedCityAtom)
 
   const { data, isPending, isError } = useQuery({

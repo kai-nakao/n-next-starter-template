@@ -2,8 +2,8 @@ import { useAtom } from 'jotai'
 
 import { useMIndustryList } from '@/services/MediumIndustry'
 
-import { selectedMIndustryAtom } from './atoms/selectedMIndustry'
-import { CheckBox } from '../../SharedComponents/CheckBox'
+import { selectedMIndustryAtom } from '../../../../atoms/selectedMIndustry'
+import { CheckBox } from '../../SharedComponents/components/CheckBox'
 
 export const MIndustrySection = () => {
   const [selectedMIndustry, setSetelectedMIndustry] = useAtom(
@@ -26,8 +26,8 @@ export const MIndustrySection = () => {
                 key={index}
                 value={mIndustry.sicCode}
                 name={mIndustry.simcName}
-                selected={selectedMIndustry === mIndustry.simcName}
-                onSelect={() => setSetelectedMIndustry(mIndustry.simcName)}
+                selected={selectedMIndustry === mIndustry.simcCode}
+                onSelect={() => setSetelectedMIndustry(mIndustry.simcCode)}
               />
             ))}
         </section>

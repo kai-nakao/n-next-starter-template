@@ -1,8 +1,8 @@
 import { useAtom } from 'jotai'
 
-import { selectedAgeAtom } from './atoms/selectedAge'
 import { AgeRanges } from './const'
-import { CheckBox } from '../../SharedComponents/CheckBox'
+import { selectedAgeAtom } from '../../../../atoms/selectedAge'
+import { CheckBox } from '../../SharedComponents/components/CheckBox'
 
 export const AgeSection = () => {
   const [selectedAge, setSelectedAge] = useAtom(selectedAgeAtom)
