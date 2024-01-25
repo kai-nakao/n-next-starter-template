@@ -4,7 +4,6 @@ import { Shimmer } from 'react-shimmer'
 
 import { selectedCityAtom } from '@/jotais/cityAtoms'
 import { useCityList } from '@/services/city'
-
 import { CheckBox } from '@/Shared/components/CheckBox'
 
 export const CitiesSection = () => {
