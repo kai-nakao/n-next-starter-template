@@ -4,14 +4,10 @@ import { AgeSection } from './AgeSection'
 import { Divider } from './components/divider'
 import { LIndustrySection } from './LIndustrySection'
 import { MIndustrySection } from './MIndustrySection'
-import { ChartSection } from '../SharedComponents/sections/ChartSection'
+import { ChartSection } from '../Shared/sections/ChartSection'
 
 export const WagePage = () => {
-  const { data: chartData, isPending } = useWageChartData({})
-
-  if (isPending) {
-    return <div>Loading...</div>
-  }
+  const { data: chartData } = useWageChartData({})
   return (
     <main className="flex flex-col justify-center">
       <LIndustrySection />

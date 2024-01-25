@@ -5,7 +5,7 @@ import { useCityList } from '@/services/city'
 import { usePopulationChartData } from '@/services/population'
 
 import { CitiesSection } from './CitiesSection'
-import { ChartSection } from '../SharedComponents/sections/ChartSection'
+import { ChartSection } from '../Shared/sections/ChartSection'
 
 export const RootPage = () => {
   const { data: chartData } = usePopulationChartData({})
