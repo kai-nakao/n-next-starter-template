@@ -1,9 +1,8 @@
 import { useAtom } from 'jotai'
 
+import { selectedLIndustryAtom } from '@/jotais/lIndustryAtoms'
 import { useLIndustryList } from '@/services/largeIndustry'
-
-import { selectedLIndustryAtom } from '../../../../atoms/selectedLIndustry'
-import { CheckBox } from '../../Shared/components/CheckBox'
+import { CheckBox } from '@/Shared/components/CheckBox'
 
 export const LIndustrySection = () => {
   const [selectedLIndustry, setSetelectedLIndustry] = useAtom(
