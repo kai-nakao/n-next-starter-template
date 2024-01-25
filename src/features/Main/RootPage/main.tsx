@@ -3,10 +3,10 @@ import { useAtom } from 'jotai'
 import { selectedCityAtom } from '@/jotais/cityAtoms'
 import { useCityList } from '@/services/city'
 import { usePopulationChartData } from '@/services/population'
-import { ChartSection } from '@/Shared/sections/ChartSection'
 
 import { CitiesSection } from './CitiesSection'
 
+import { ChartSection } from '@/Shared/sections/ChartSection'
 
 export const RootPage = () => {
   const { data: chartData } = usePopulationChartData({})

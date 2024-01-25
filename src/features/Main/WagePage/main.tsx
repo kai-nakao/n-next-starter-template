@@ -1,11 +1,11 @@
 import { useWageChartData } from '@/services/wage'
-import { ChartSection } from '@/Shared/sections/ChartSection'
 
 import { AgeSection } from './AgeSection'
 import { Divider } from './components/divider'
 import { LIndustrySection } from './LIndustrySection'
 import { MIndustrySection } from './MIndustrySection'
 
+import { ChartSection } from '@/Shared/sections/ChartSection'
 
 export const WagePage = () => {
   const { data: chartData } = useWageChartData({})

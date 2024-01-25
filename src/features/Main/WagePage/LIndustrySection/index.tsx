@@ -2,6 +2,7 @@ import { useAtom } from 'jotai'
 
 import { selectedLIndustryAtom } from '@/jotais/lIndustryAtoms'
 import { useLIndustryList } from '@/services/largeIndustry'
+
 import { CheckBox } from '@/Shared/components/CheckBox'
 
 export const LIndustrySection = () => {
