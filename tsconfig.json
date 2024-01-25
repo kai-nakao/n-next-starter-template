@@ -14,7 +14,8 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/Shared/*": ["./src/features/Main/Shared/*"]
     },
     "forceConsistentCasingInFileNames": true
   },

@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useAtom } from 'jotai'
 
-import { selectedLIndustryAtom } from '@/atoms/selectedLIndustry'
+import { selectedLIndustryAtom } from '@/jotais/lIndustryAtoms'
 
 import { mIndustryKeys } from './key'
 import { getMIndustrySelector } from './selector'

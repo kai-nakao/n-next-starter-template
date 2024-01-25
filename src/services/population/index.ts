@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useAtom } from 'jotai'
 
-import { selectedCityAtom } from '@/atoms/selectedCity'
+import { selectedCityAtom } from '@/jotais/cityAtoms'
 
 import { ratioKeys } from './key'
 import { getRatioSelector } from './selector'
