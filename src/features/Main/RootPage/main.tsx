@@ -2,8 +2,8 @@ import { useAtom } from 'jotai'
 
 import { ChartSection } from '@/features/Shared/sections/ChartSection'
 import { selectedCityAtom } from '@/jotais/cityAtoms'
-import { useCityList } from '@/services/city'
-import { usePopulationChartData } from '@/services/population'
+import { useCityList } from '@/react-queries/city'
+import { usePopulationChartData } from '@/react-queries/population'
 
 import { CitiesSection } from './CitiesSection'
 
