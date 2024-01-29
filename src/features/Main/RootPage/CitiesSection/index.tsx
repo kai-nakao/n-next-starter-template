@@ -2,9 +2,9 @@ import { useAtom } from 'jotai'
 import React from 'react'
 import { Shimmer } from 'react-shimmer'
 
+import { CheckBox } from '@/features/Shared/components/CheckBox'
 import { selectedCityAtom } from '@/jotais/cityAtoms'
 import { useCityList } from '@/services/city'
-import { CheckBox } from '@/Shared/components/CheckBox'
 
 export const CitiesSection = () => {
   const [selectedCity, setSelectedCity] = useAtom(selectedCityAtom)

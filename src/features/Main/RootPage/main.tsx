@@ -1,15 +1,18 @@
 import { useAtom } from 'jotai'
 
+import { ChartSection } from '@/features/Shared/sections/ChartSection'
 import { selectedCityAtom } from '@/jotais/cityAtoms'
 import { useCityList } from '@/services/city'
 import { usePopulationChartData } from '@/services/population'
-import { ChartSection } from '@/Shared/sections/ChartSection'
 
 import { CitiesSection } from './CitiesSection'
 
 export const RootPage = () => {
-  const { data: chartData } = usePopulationChartData({})
   const { data: cityList } = useCityList({})
+  const { data: chartData } = usePopulationChartData({})
+
+  console.log('cityList', cityList)
+  console.log('chartData', chartData)
   const [selectedCity] = useAtom(selectedCityAtom)
   // get city name from city code(atom)
   const cityName =
