@@ -17,12 +17,15 @@ jobs:
     steps:
       - run: echo "CI TEST is running"
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18.17.1'
 
       - name: Install pnpm
         run: npm install -g pnpm
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install
