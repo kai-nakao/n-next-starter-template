@@ -5,7 +5,7 @@ import { selectedCityAtom } from '@/jotais/cityAtoms'
 import { useCityList } from '@/react-queries/city'
 import { usePopulationChartData } from '@/react-queries/population'
 
-import { CitiesSection } from './CitiesSection'
+import { CitiesSection } from './sections/CitiesSection'
 
 export const RootPage = () => {
   const { data: cityList } = useCityList({})
@@ -20,7 +20,7 @@ export const RootPage = () => {
     '未選択'
 
   return (
-    <main className="flex flex-col justify-center">
+    <main className="flex flex-col justify-center ">
       <CitiesSection />
       <section className="flex justify-center">
         <ChartSection graphName={`${cityName}のグラフ`} chartData={chartData} />
