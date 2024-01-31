@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - develop
-      - 'feat/*'
-      - 'fix/*'
+  
 jobs:
   CI-TEST-JOB:
     runs-on: ubuntu-latest
