@@ -1,15 +1,16 @@
 import { useAtom } from 'jotai'
 
+import { ChartSection } from '@/features/Shared/sections/ChartSection'
 import { selectedCityAtom } from '@/jotais/cityAtoms'
-import { useCityList } from '@/services/city'
-import { usePopulationChartData } from '@/services/population'
-import { ChartSection } from '@/Shared/sections/ChartSection'
+import { useCityList } from '@/react-queries/city'
+import { usePopulationChartData } from '@/react-queries/population'
 
-import { CitiesSection } from './CitiesSection'
+import { CitiesSection } from './sections/CitiesSection'
 
 export const RootPage = () => {
-  const { data: chartData } = usePopulationChartData({})
   const { data: cityList } = useCityList({})
+  const { data: chartData } = usePopulationChartData({})
+
   const [selectedCity] = useAtom(selectedCityAtom)
   // get city name from city code(atom)
   const cityName =
@@ -17,7 +18,7 @@ export const RootPage = () => {
     '未選択'
 
   return (
-    <main className="flex flex-col justify-center">
+    <main className="flex flex-col justify-center ">
       <CitiesSection />
       <section className="flex justify-center">
         <ChartSection graphName={`${cityName}のグラフ`} chartData={chartData} />

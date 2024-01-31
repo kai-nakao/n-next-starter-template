@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { getWage } from '@/services/wage/function'
+import { getWage } from '@/react-queries/wage/function'
 
 const handle = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { getCityList } from '@/services/city/function'
+import { getCityList } from '@/react-queries/city/function'
 
 const handle = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {

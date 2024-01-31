@@ -8,7 +8,7 @@ export const ChartSection = ({
   chartData: any
 }) => {
   return (
-    <Card className="w-10/12">
+    <Card className="h-1/2 w-10/12">
       <Title>{graphName}</Title>
       <LineChart
         className="h-96"

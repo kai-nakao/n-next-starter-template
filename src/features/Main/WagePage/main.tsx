@@ -1,10 +1,10 @@
-import { useWageChartData } from '@/services/wage'
-import { ChartSection } from '@/Shared/sections/ChartSection'
+import { ChartSection } from '@/features/Shared/sections/ChartSection'
+import { useWageChartData } from '@/react-queries/wage'
 
-import { AgeSection } from './AgeSection'
 import { Divider } from './components/divider'
-import { LIndustrySection } from './LIndustrySection'
-import { MIndustrySection } from './MIndustrySection'
+import { AgeSection } from './sections/AgeSection'
+import { LIndustrySection } from './sections/LIndustrySection'
+import { MIndustrySection } from './sections/MIndustrySection'
 
 export const WagePage = () => {
   const { data: chartData } = useWageChartData({})

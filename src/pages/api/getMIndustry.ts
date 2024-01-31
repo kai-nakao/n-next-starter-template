@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { getMIndustry } from '@/services/MediumIndustry/function'
+import { getMIndustry } from '@/react-queries/MediumIndustry/function'
 
 const handle = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
