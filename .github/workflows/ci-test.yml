@@ -1,0 +1,22 @@
+name: CI Test
+
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  CI-TEST-JOB:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "CI TEST is running"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.17.1'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run tests
+        run: pnpm run test
