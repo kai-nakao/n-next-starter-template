@@ -11,8 +11,6 @@ export const RootPage = () => {
   const { data: cityList } = useCityList({})
   const { data: chartData } = usePopulationChartData({})
 
-  console.log('cityList', cityList)
-  console.log('chartData', chartData)
   const [selectedCity] = useAtom(selectedCityAtom)
   // get city name from city code(atom)
   const cityName =

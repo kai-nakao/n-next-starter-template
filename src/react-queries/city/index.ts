@@ -6,7 +6,6 @@ import { getCitySelector } from './selector'
 
 export const fetchCity = async () => {
   const response = await axios.get('/api/getCity')
-  console.log('response.data', response.data)
   return response.data
 }
 
