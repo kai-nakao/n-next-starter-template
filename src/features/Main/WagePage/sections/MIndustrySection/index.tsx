@@ -1,4 +1,5 @@
 import { useAtom } from 'jotai'
+import { Shimmer } from 'react-shimmer'
 
 import { CheckBox } from '@/features/Shared/components/CheckBox'
 import { selectedMIndustryAtom } from '@/jotais/mIndustryAtoms'
@@ -9,7 +10,13 @@ export const MIndustrySection = () => {
     selectedMIndustryAtom,
   )
 
-  const { data } = useMIndustryList({})
+  const { data, isPending } = useMIndustryList({})
+  if (isPending)
+    return (
+      <div className="flex justify-center">
+        <Shimmer className="" width={800} height={200} />
+      </div>
+    )
   return (
     <section>
       {/* middle industry section */}
