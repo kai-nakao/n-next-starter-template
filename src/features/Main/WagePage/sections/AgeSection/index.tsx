@@ -1,11 +1,13 @@
 import { useAtom } from 'jotai'
+import { memo } from 'react'
 
 import { CheckBox } from '@/features/Shared/components/CheckBox'
 import { selectedAgeAtom } from '@/jotais/ageAtoms'
 
 import { AgeRanges } from './const'
 
-export const AgeSection = () => {
+// memo is used to prevent re-rendering
+export const AgeSection = memo(function AgeSection() {
   const [selectedAge, setSelectedAge] = useAtom(selectedAgeAtom)
 
   return (
@@ -27,4 +29,4 @@ export const AgeSection = () => {
       </section>
     </fieldset>
   )
-}
+})

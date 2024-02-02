@@ -1,5 +1,5 @@
-import React from 'react'
+import React, { memo } from 'react'
 
-export const Divider = () => {
-  return <hr className="" />
-}
+export const Divider = memo(function Divider() {
+  return <hr className="border-t-2 border-gray-200" />
+})

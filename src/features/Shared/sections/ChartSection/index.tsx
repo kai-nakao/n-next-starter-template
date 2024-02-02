@@ -1,12 +1,13 @@
 import { Card, Title, LineChart } from '@tremor/react'
+import { memo } from 'react'
 
-export const ChartSection = ({
+export const ChartSection = memo(function ChartSection({
   graphName,
   chartData,
 }: {
   graphName: string
   chartData: any
-}) => {
+}) {
   return (
     <Card className="h-1/2 w-10/12">
       <Title>{graphName}</Title>
@@ -21,4 +22,4 @@ export const ChartSection = ({
       />
     </Card>
   )
-}
+})
