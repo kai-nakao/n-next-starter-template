@@ -1,14 +1,14 @@
 import { useAtom } from 'jotai'
+import { memo } from 'react'
 
 import { CheckBox } from '@/features/Shared/components/CheckBox'
 import { selectedLIndustryAtom } from '@/jotais/lIndustryAtoms'
 import { useLIndustryList } from '@/react-queries/largeIndustry'
 
-export const LIndustrySection = () => {
+export const LIndustrySection = memo(function LIndustrySection() {
   const [selectedLIndustry, setSetelectedLIndustry] = useAtom(
     selectedLIndustryAtom,
   )
-
   const { data } = useLIndustryList({})
   return (
     <section>
@@ -33,4 +33,4 @@ export const LIndustrySection = () => {
       </fieldset>
     </section>
   )
-}
+})
