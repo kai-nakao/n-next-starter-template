@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { getLIndustryList } from '@/client/react-queries/largeIndustry/function'
+import { getLIndustryList } from '@/client/react-queries/largeIndustries/function'
 
 const getLIndustries = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
