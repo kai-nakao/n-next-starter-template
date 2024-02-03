@@ -1,10 +1,10 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
-import { Header } from '@/features/Layout/Header'
+import { Header } from '@/client/features/Layout/Header'
 
 import type { AppProps } from 'next/app'
-import '@/styles/globals.css'
+import '@/client/styles/globals.css'
 
 const queryClient = new QueryClient()
 

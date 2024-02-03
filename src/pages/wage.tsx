@@ -1,4 +1,4 @@
-import { WagePage } from '@/features/Main/WagePage/main'
+import { WagePage } from '@/client/features/Main/WagePage/main'
 
 export default function Home() {
   return <WagePage />

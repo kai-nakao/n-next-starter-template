@@ -11,36 +11,48 @@
 - ディレクトリ構成
 ```
 src
- ├features
-  └Layout
-   └Header
-    └index.tsx
-  └Main
-   └RootPage
-    └sections
-     └SampleSection
-      └components
-      └functions
-      └stories
-      └test
-      └main.tsx
-   └SamplePage(省略)
-  └Shared
- ├jotais
-  └atoms files
- ├pages
- ├react-queries
-  └hoge
-   └function.ts
-   └index.ts
-   └key.ts
+ ├client
+  ├features
+   └Layout
+    └Header
+     └index.tsx
+   └Main
+    └RootPage
+     └sections
+      └SampleSection
+       └components
+       └functions
+       └stories
+       └test
+       └main.tsx
+    └SamplePage(省略)
+   └Shared
+  ├atoms
+  ├react-queries
+   └hoge
+    └function.ts
+    └index.ts
+    └key.ts
    └type.ts
-   └selector.ts
-  └hoge2(省略)
+    └selector.ts
+   └hoge2(省略)
+ ├pages
+ ├server
+  └handlers
+   └wages
+    └get
+      └index.ts
+   └cities(省略)
+
+
+
+
+
 ```
 - ディレクトリ構成について
   - featuresを使用して関心ごとにディレクトリ作成
   - セマンティックHTMLのようなイメージでLayout, Main dir
+  - pagesディレクトリにはapi, uiどちらのエントリーポイントしか置いてはいけない。
 
 test triggerについて
 - precommit, github actionsでintegration testを実行
