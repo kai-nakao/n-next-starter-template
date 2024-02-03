@@ -4,7 +4,7 @@ import { Shimmer } from 'react-shimmer'
 
 import { selectedLIndustryAtom } from '@/client/atoms/lIndustryAtoms'
 import { CheckBox } from '@/client/features/Shared/components/CheckBox'
-import { useLIndustryList } from '@/client/react-queries/largeIndustry'
+import { useLIndustryList } from '@/client/react-queries/largeIndustries'
 
 export const LIndustrySection = memo(function LIndustrySection() {
   const [selectedLIndustry, setSetelectedLIndustry] = useAtom(

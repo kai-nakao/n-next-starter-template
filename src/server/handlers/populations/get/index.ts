@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { getPopulationRatio } from '@/client/react-queries/population/function'
+import { getPopulationRatio } from '@/client/react-queries/populations/function'
 
 const getPopulations = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
