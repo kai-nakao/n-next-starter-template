@@ -1,6 +1,49 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:storybook/recommended"
-  ]
+    "plugin:storybook/recommended",
+    // must be last in the extends array
+    "prettier"
+  ],
+  "plugins": ["strict-dependencies", "unused-imports"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "object",
+          "type",
+          "index"
+        ],
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "newlines-between": "always"
+      }
+    ],
+    "strict-dependencies/strict-dependencies": [
+      "error",
+      [
+        {
+          "module": "src/features/*/components/**/*",
+          "allowReferenceFrom": ["src/features/*/components/index.tsx"],
+          // features/*/components/ any file can import other files from the same folder
+          "allowSameModule": true
+        },
+        {
+          "module": "src/features/*/components/*/index.tsx",
+          "allowReferenceFrom": ["src/pages/**/*"],
+          "allowSameModule": false
+        },
+        {
+          "module": "src/features/*/functions/**/*",
+          "allowReferenceFrom": ["src/features/*/components/**/*"],
+          "allowSameModule": true
+        }
+      ]
+    ],
+    "unused-imports/no-unused-imports": "warn"
+  }
 }

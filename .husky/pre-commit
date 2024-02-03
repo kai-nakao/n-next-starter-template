@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# only staged files(lint, prettier)
+pnpm dlx lint-staged
+
+# all files test when commit
+pnpm run test

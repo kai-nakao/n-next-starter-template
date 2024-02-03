@@ -1,9 +1,5 @@
-import Image from 'next/image';
+import { RootPage } from '@/client/features/Main/RootPage/main'
 
 export default function Home() {
-  return (
-    <main>
-      <div>test</div>
-    </main>
-  );
+  return <RootPage />
 }
