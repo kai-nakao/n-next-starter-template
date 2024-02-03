@@ -2,9 +2,9 @@ import { useAtom } from 'jotai'
 import { memo } from 'react'
 import { Shimmer } from 'react-shimmer'
 
-import { CheckBox } from '@/features/Shared/components/CheckBox'
-import { selectedLIndustryAtom } from '@/jotais/lIndustryAtoms'
-import { useLIndustryList } from '@/react-queries/largeIndustry'
+import { selectedLIndustryAtom } from '@/client/atoms/lIndustryAtoms'
+import { CheckBox } from '@/client/features/Shared/components/CheckBox'
+import { useLIndustryList } from '@/client/react-queries/largeIndustry'
 
 export const LIndustrySection = memo(function LIndustrySection() {
   const [selectedLIndustry, setSetelectedLIndustry] = useAtom(

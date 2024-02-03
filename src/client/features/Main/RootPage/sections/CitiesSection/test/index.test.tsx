@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 
-import { cityMock } from '@/features/Shared/mocks/useCityList'
+import { cityMock } from '@/client/features/Shared/mocks/useCityList'
 
 import { CitiesSection } from '..'
 

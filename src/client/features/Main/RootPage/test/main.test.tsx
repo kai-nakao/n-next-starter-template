@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 
-import { cityMock } from '@/features/Shared/mocks/useCityList'
-import { populationMock } from '@/features/Shared/mocks/usePopulationList'
+import { cityMock } from '@/client/features/Shared/mocks/useCityList'
+import { populationMock } from '@/client/features/Shared/mocks/usePopulationList'
 
 import { RootPage } from '../main'
 

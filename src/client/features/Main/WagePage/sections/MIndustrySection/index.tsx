@@ -1,9 +1,9 @@
 import { useAtom } from 'jotai'
 import { Shimmer } from 'react-shimmer'
 
-import { CheckBox } from '@/features/Shared/components/CheckBox'
-import { selectedMIndustryAtom } from '@/jotais/mIndustryAtoms'
-import { useMIndustryList } from '@/react-queries/MediumIndustry'
+import { selectedMIndustryAtom } from '@/client/atoms/mIndustryAtoms'
+import { CheckBox } from '@/client/features/Shared/components/CheckBox'
+import { useMIndustryList } from '@/client/react-queries/MediumIndustry'
 
 export const MIndustrySection = () => {
   const [selectedMIndustry, setSetelectedMIndustry] = useAtom(

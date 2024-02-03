@@ -1,8 +1,8 @@
 import { useAtom } from 'jotai'
 import { memo } from 'react'
 
-import { CheckBox } from '@/features/Shared/components/CheckBox'
-import { selectedAgeAtom } from '@/jotais/ageAtoms'
+import { selectedAgeAtom } from '@/client/atoms/ageAtoms'
+import { CheckBox } from '@/client/features/Shared/components/CheckBox'
 
 import { AgeRanges } from './const'
 

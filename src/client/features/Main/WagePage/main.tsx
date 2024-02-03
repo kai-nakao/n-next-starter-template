@@ -1,5 +1,5 @@
-import { ChartSection } from '@/features/Shared/sections/ChartSection'
-import { useWageChartData } from '@/react-queries/wage'
+import { ChartSection } from '@/client/features/Shared/sections/ChartSection'
+import { useWageChartData } from '@/client/react-queries/wage'
 
 import { Divider } from './components/divider'
 import { AgeSection } from './sections/AgeSection'

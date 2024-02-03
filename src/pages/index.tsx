@@ -1,4 +1,4 @@
-import { RootPage } from '@/features/Main/RootPage/main'
+import { RootPage } from '@/client/features/Main/RootPage/main'
 
 export default function Home() {
   return <RootPage />
