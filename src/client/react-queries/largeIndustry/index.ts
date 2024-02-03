@@ -5,7 +5,7 @@ import { lIndustryKeys } from './key'
 import { getLIndustrySelector } from './selector'
 
 const fetchLIndustry = async () => {
-  const response = await axios.get('/api/getLIndustry')
+  const response = await axios.get('/api/getLIndustries')
   return response.data
 }
 

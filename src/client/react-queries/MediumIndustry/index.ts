@@ -9,7 +9,7 @@ import { getMIndustrySelector } from './selector'
 
 const fetchMIndustry = async (lIndustryCode: string) => {
   const response = await axios.get(
-    `/api/getMIndustry?lIndustryCode=${lIndustryCode}`,
+    `/api/getMIndustries?lIndustryCode=${lIndustryCode}`,
   )
   return response.data
 }

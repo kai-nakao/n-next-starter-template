@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { getPopulationRatio } from '@/client/react-queries/population/function'
 
-const handle = async (req: NextApiRequest, res: NextApiResponse) => {
+const getPopulations = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
       const cityCode = req.query.cityCode as string
@@ -17,4 +17,4 @@ const handle = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 }
 
-export default handle
+export default getPopulations

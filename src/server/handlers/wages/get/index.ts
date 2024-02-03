@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { getWage } from '@/client/react-queries/wage/function'
 
-const handle = async (req: NextApiRequest, res: NextApiResponse) => {
+const getWages = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
       const simcCode = req.query.simcCode as string
@@ -19,4 +19,4 @@ const handle = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 }
 
-export default handle
+export default getWages

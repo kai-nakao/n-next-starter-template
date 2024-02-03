@@ -15,7 +15,7 @@ const fetchWage = async (
   sicCode: string,
 ) => {
   const response = await axios.get(
-    `/api/getWage?simcCode=${simcCode}&wageAge=${wageAge}&sicCode=${sicCode}`,
+    `/api/getWages?simcCode=${simcCode}&wageAge=${wageAge}&sicCode=${sicCode}`,
   )
 
   return response.data

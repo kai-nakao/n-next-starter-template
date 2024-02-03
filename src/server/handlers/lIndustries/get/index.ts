@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { getLIndustryList } from '@/client/react-queries/largeIndustry/function'
 
-const handle = async (req: NextApiRequest, res: NextApiResponse) => {
+const getLIndustries = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
       const data = await getLIndustryList()
@@ -16,4 +16,4 @@ const handle = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 }
 
-export default handle
+export default getLIndustries

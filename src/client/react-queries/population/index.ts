@@ -8,7 +8,7 @@ import { ratioKeys } from './key'
 import { getRatioSelector } from './selector'
 
 const fetchPopulationRatio = async (cityCode: string) => {
-  const response = await axios.get(`/api/getPopulation?cityCode=${cityCode}`)
+  const response = await axios.get(`/api/getPopulations?cityCode=${cityCode}`)
   return response.data
 }
 

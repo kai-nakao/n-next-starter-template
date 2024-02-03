@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { getCityList } from '@/client/react-queries/city/function'
 
-const handle = async (req: NextApiRequest, res: NextApiResponse) => {
+const getCities = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
       const data = await getCityList()
@@ -16,4 +16,4 @@ const handle = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 }
 
-export default handle
+export default getCities

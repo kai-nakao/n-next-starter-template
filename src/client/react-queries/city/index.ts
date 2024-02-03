@@ -5,7 +5,7 @@ import { cityKeys } from './key'
 import { getCitySelector } from './selector'
 
 export const fetchCity = async () => {
-  const response = await axios.get('/api/getCity')
+  const response = await axios.get('/api/getCities')
   return response.data
 }
 
