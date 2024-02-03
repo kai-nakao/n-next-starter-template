@@ -9,25 +9,39 @@
   - react qeueryの使用場所がrenderするコンポーネントのため、mockしている。
 
 - ディレクトリ構成
-.
-├── src
-│   ├── atoms
-│   ├── features
-│   │   ├── Layout
-│   │   ├── Main
-│   │   │   ├── RootPage
-│   │   │   ├── Shared
-│   │   │   └── WagePage
-│   ├── pages
-│   ├── services
-│   │   ├── city
-│   │   ├── largeIndustry
-│   │   ├── MediumIndustry
-│   │   ├── population
-│   │   └── wage
-│   └── styles
-└── README.md
+```
+src
+ ├features
+  └Layout
+   └Header
+    └index.tsx
+  └Main
+   └RootPage
+    └sections
+     └SampleSection
+      └components
+      └functions
+      └stories
+      └test
+      └main.tsx
+   └SamplePage(省略)
+  └Shared
+ ├jotais
+  └atoms files
+ ├pages
+ ├react-queries
+  └hoge
+   └function.ts
+   └index.ts
+   └key.ts
+   └type.ts
+   └selector.ts
+  └hoge2(省略)
+```
 - ディレクトリ構成について
   - featuresを使用して関心ごとにディレクトリ作成
   - セマンティックHTMLのようなイメージでLayout, Main dir
-  -
+
+test triggerについて
+- precommit, github actionsでintegration testを実行
+
