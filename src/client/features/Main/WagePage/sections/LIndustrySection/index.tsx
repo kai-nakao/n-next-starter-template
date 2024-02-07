@@ -11,6 +11,7 @@ export const LIndustrySection = memo(function LIndustrySection() {
     selectedLIndustryAtom,
   )
   const { data, isPending } = useLIndustryList({})
+
   if (isPending)
     return (
       <div className="flex justify-center">
@@ -27,7 +28,7 @@ export const LIndustrySection = memo(function LIndustrySection() {
         </div>
         <section className="m-10 grid grid-cols-3 gap-4">
           {data &&
-            data.map((LIndustry: LIndustry, index: number) => (
+            data.map((LIndustry, index: number) => (
               <CheckBox
                 key={index}
                 value={LIndustry.sicCode}

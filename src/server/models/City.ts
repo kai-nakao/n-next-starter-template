@@ -4,3 +4,5 @@ type City = {
   cityName: string
   bigCityFlag: string
 }
+
+export type { City }

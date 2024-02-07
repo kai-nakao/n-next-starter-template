@@ -1,18 +1,17 @@
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
+import { trpc } from '@/utils/trpc'
+import { RouterOutput } from '@/utils/trpc'
 
-import { cityKeys } from './key'
 import { getCitySelector } from './selector'
 
-export const fetchCity = async () => {
-  const response = await axios.get('/api/getCities')
-  return response.data
-}
-
-export const useCityList = ({ initialData }: { initialData?: any }) => {
-  const { data, isPending, isError } = useQuery({
-    queryKey: cityKeys.all,
-    queryFn: fetchCity,
+export const useCityList = ({
+  initialData,
+}: {
+  initialData?: RouterOutput['cityList'] | undefined
+}) => {
+  // first argument is the key, which is undefined in this case
+  const { data, isPending, isError } = trpc.cityList.useQuery<
+    RouterOutput['cityList']
+  >(undefined, {
     select: getCitySelector,
     staleTime: 1000 * 5,
     initialData: initialData,

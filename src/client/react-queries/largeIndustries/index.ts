@@ -1,18 +1,15 @@
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
+import { RouterOutput, trpc } from '@/utils/trpc'
 
-import { lIndustryKeys } from './key'
 import { getLIndustrySelector } from './selector'
 
-const fetchLIndustry = async () => {
-  const response = await axios.get('/api/getLIndustries')
-  return response.data
-}
-
-export const useLIndustryList = ({ initialData }: { initialData?: any }) => {
-  const { data, isPending, isError } = useQuery({
-    queryKey: lIndustryKeys.all,
-    queryFn: fetchLIndustry,
+export const useLIndustryList = ({
+  initialData,
+}: {
+  initialData?: RouterOutput['lIndustry'] | undefined
+}) => {
+  const { data, isPending, isError } = trpc.lIndustry.useQuery<
+    RouterOutput['lIndustry']
+  >(undefined, {
     select: getLIndustrySelector,
     staleTime: 1000 * 5,
     initialData: initialData,

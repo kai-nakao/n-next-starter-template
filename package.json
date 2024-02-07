@@ -17,16 +17,21 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@headlessui/tailwindcss": "^0.2.0",
-    "@tanstack/react-query": "^5.17.10",
+    "@tanstack/react-query": "^5.18.1",
     "@tanstack/react-query-devtools": "^5.17.10",
     "@tremor/react": "^3.12.1",
+    "@trpc/client": "11.0.0-next-beta.264",
+    "@trpc/next": "11.0.0-next-beta.264",
+    "@trpc/react-query": "11.0.0-next-beta.264",
+    "@trpc/server": "11.0.0-next-beta.264",
     "axios": "^1.6.2",
     "jotai": "^2.6.2",
     "next": "12.3.4",
     "react": "^18",
     "react-dom": "^18",
     "react-query": "^3.39.3",
-    "react-shimmer": "^3.2.0"
+    "react-shimmer": "^3.2.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.4",
