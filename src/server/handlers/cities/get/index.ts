@@ -1,6 +1,8 @@
+import axios from 'axios'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { getCityList } from '@/client/react-queries/cities/function'
+import { okayamaCityURL } from '@/server/handlers/cities/get/const'
+import { City } from '@/server/models/City'
 
 const getCities = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
@@ -14,6 +16,15 @@ const getCities = async (req: NextApiRequest, res: NextApiResponse) => {
     res.setHeader('Allow', ['GET'])
     res.status(405).end(`Method ${req.method} Not Allowed`)
   }
+}
+
+const getCityList = async (): Promise<City[]> => {
+  const response = await axios.get(okayamaCityURL, {
+    headers: {
+      'X-API-KEY': process.env.API_KEY,
+    },
+  })
+  return response.data
 }
 
 export default getCities
