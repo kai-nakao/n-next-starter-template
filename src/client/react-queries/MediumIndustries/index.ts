@@ -1,29 +1,28 @@
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
 import { useAtom } from 'jotai'
 
 import { selectedLIndustryAtom } from '@/client/atoms/lIndustryAtoms'
+import { RouterOutput, trpc } from '@/utils/trpc'
 
-import { mIndustryKeys } from './key'
 import { getMIndustrySelector } from './selector'
 
-const fetchMIndustry = async (lIndustryCode: string) => {
-  const response = await axios.get(
-    `/api/getMIndustries?lIndustryCode=${lIndustryCode}`,
-  )
-  return response.data
-}
-
-export const useMIndustryList = ({ initialData }: { initialData?: any }) => {
+export const useMIndustryList = ({
+  initialData,
+}: {
+  initialData?: RouterOutput['mIndustry'] | undefined
+}) => {
+  // TODO: trpc cannot edit querykey to use selectedLIndustryAtom
   const [selectedLIndustry] = useAtom(selectedLIndustryAtom)
 
-  const { data, isPending, isError } = useQuery({
-    queryKey: [mIndustryKeys.all, selectedLIndustry],
-    queryFn: () => fetchMIndustry(selectedLIndustry),
-    select: getMIndustrySelector,
-    staleTime: 1000 * 5,
-    initialData: initialData,
-  })
+  const { data, isPending, isError } = trpc.mIndustry.useQuery<
+    RouterOutput['mIndustry']
+  >(
+    { lIndustryCode: selectedLIndustry },
+    {
+      select: getMIndustrySelector,
+      staleTime: 1000 * 5,
+      initialData: initialData,
+    },
+  )
 
   return {
     data,

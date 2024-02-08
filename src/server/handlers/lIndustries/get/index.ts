@@ -1,6 +1,7 @@
+import axios from 'axios'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { getLIndustryList } from '@/client/react-queries/largeIndustries/function'
+import { lIndustryURL } from '@/server/handlers/lIndustries/get/const'
 
 const getLIndustries = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
@@ -14,6 +15,15 @@ const getLIndustries = async (req: NextApiRequest, res: NextApiResponse) => {
     res.setHeader('Allow', ['GET'])
     res.status(405).end(`Method ${req.method} Not Allowed`)
   }
+}
+
+const getLIndustryList = async (): Promise<LIndustry> => {
+  const response = await axios.get(lIndustryURL, {
+    headers: {
+      'X-API-KEY': process.env.API_KEY,
+    },
+  })
+  return response.data
 }
 
 export default getLIndustries

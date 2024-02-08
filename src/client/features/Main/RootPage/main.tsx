@@ -9,12 +9,16 @@ import { CitiesSection } from './sections/CitiesSection'
 
 export const RootPage = () => {
   const { data: cityList } = useCityList({})
-  const { data: chartData } = usePopulationChartData({})
+  const { data: chartData, isPending, isError } = usePopulationChartData({})
 
+  console.log('data', chartData)
+
+  console.log('isPending', isPending)
+  console.log('isError', isError)
   const [selectedCity] = useAtom(selectedCityAtom)
   // get city name from city code(atom)
   const cityName =
-    cityList?.find((city: City) => city.cityCode === selectedCity)?.cityName ||
+    cityList?.find((city) => city.cityCode === selectedCity)?.cityName ||
     '未選択'
 
   return (

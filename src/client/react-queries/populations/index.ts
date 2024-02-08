@@ -1,32 +1,28 @@
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
 import { useAtom } from 'jotai'
 
 import { selectedCityAtom } from '@/client/atoms/cityAtoms'
+import { RouterOutput, trpc } from '@/utils/trpc'
 
-import { ratioKeys } from './key'
 import { getRatioSelector } from './selector'
-
-const fetchPopulationRatio = async (cityCode: string) => {
-  const response = await axios.get(`/api/getPopulations?cityCode=${cityCode}`)
-  return response.data
-}
 
 export const usePopulationChartData = ({
   initialData,
 }: {
-  initialData?: any
+  initialData?: RouterOutput['population'] | undefined
 }) => {
   const [selectedCity] = useAtom(selectedCityAtom)
 
-  const { data, isPending, isError } = useQuery({
-    // 個別のcheckboxが変更された時にrendering, 取得するために第二配列にstate指定
-    queryKey: [ratioKeys.getRatio, selectedCity],
-    queryFn: () => fetchPopulationRatio(selectedCity),
-    select: getRatioSelector,
-    staleTime: 1000 * 5,
-    initialData: initialData,
-  })
+  const { data, isPending, isError } = trpc.population.useQuery<
+    RouterOutput['population']
+  >(
+    { cityCode: selectedCity },
+    {
+      //TODO: trpc cannot edit querykey to use selectedLIndustryAtom
+      select: getRatioSelector,
+      staleTime: 1000 * 5,
+      initialData: initialData,
+    },
+  )
 
   return {
     data,

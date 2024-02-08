@@ -24,7 +24,7 @@ export const CitiesSection = () => {
       </div>
       <section className="m-10 grid grid-cols-6 gap-4">
         {data &&
-          data.map((city: City, index: number) => (
+          data.map((city, index: number) => (
             <CheckBox
               key={index}
               value={city.cityCode}
