@@ -1,23 +1,35 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { httpBatchLink } from '@trpc/client'
+import { useState } from 'react'
 
 import { Header } from '@/client/features/Layout/Header'
 import { trpc } from '@/utils/trpc'
 
-import type { AppProps } from 'next/app'
 import '@/client/styles/globals.css'
-import type { AppType } from 'next/app'
 
-const queryClient = new QueryClient()
+import type { AppProps, AppType } from 'next/app'
 
-const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
+const App: AppType = ({ Component, pageProps }: AppProps) => {
+  const [queryClient] = useState(() => new QueryClient())
+  const [trpcClient] = useState(() =>
+    trpc.createClient({
+      links: [
+        httpBatchLink({
+          url: 'http://localhost:3000/api/trpc',
+        }),
+      ],
+    }),
+  )
   return (
-    <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={true} />
-      <Header />
-      <Component {...pageProps} />
-    </QueryClientProvider>
+    <trpc.Provider client={trpcClient} queryClient={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={true} />
+        <Header />
+        <Component {...pageProps} />
+      </QueryClientProvider>
+    </trpc.Provider>
   )
 }
 
-export default trpc.withTRPC(MyApp)
+export default App
