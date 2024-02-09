@@ -1,5 +1,5 @@
 import { ChartSection } from '@/client/features/Shared/sections/ChartSection'
-import { useWageChartData } from '@/client/react-queries/wages'
+import { useWageChartData } from '@/client/features/Shared/sections/ChartSection/react-queries/wages'
 
 import { Divider } from './components/divider'
 import { AgeSection } from './sections/AgeSection'
@@ -7,10 +7,8 @@ import { LIndustrySection } from './sections/LIndustrySection'
 import { MIndustrySection } from './sections/MIndustrySection'
 
 export const WagePage = () => {
-  const { data: chartData, isPending, isError } = useWageChartData({})
-  console.log('data', chartData)
-  console.log('isPending', isPending)
-  console.log('isError', isError)
+  const { data: chartData } = useWageChartData({})
+
   return (
     <main className="flex flex-col justify-center">
       <LIndustrySection />

@@ -3,8 +3,8 @@ import React from 'react'
 import { Shimmer } from 'react-shimmer'
 
 import { selectedCityAtom } from '@/client/atoms/cityAtoms'
+import { useCityList } from '@/client/features/Main/RootPage/sections/CitiesSection/react-queries/cities'
 import { CheckBox } from '@/client/features/Shared/components/CheckBox'
-import { useCityList } from '@/client/react-queries/cities'
 
 export const CitiesSection = () => {
   const [selectedCity, setSelectedCity] = useAtom(selectedCityAtom)

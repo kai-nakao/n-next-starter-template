@@ -3,7 +3,8 @@ import { Shimmer } from 'react-shimmer'
 
 import { selectedMIndustryAtom } from '@/client/atoms/mIndustryAtoms'
 import { CheckBox } from '@/client/features/Shared/components/CheckBox'
-import { useMIndustryList } from '@/client/react-queries/MediumIndustries'
+
+import { useMIndustryList } from './react-queries/MediumIndustries'
 
 export const MIndustrySection = () => {
   const [selectedMIndustry, setSetelectedMIndustry] = useAtom(
