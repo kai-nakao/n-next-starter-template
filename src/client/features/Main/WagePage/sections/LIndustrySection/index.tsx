@@ -3,8 +3,8 @@ import { memo } from 'react'
 import { Shimmer } from 'react-shimmer'
 
 import { selectedLIndustryAtom } from '@/client/atoms/lIndustryAtoms'
+import { useLIndustryList } from '@/client/features/Main/WagePage/sections/LIndustrySection/react-queries/largeIndustries'
 import { CheckBox } from '@/client/features/Shared/components/CheckBox'
-import { useLIndustryList } from '@/client/react-queries/largeIndustries'
 
 export const LIndustrySection = memo(function LIndustrySection() {
   const [selectedLIndustry, setSetelectedLIndustry] = useAtom(
