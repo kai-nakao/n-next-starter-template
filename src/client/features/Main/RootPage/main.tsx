@@ -10,11 +10,6 @@ import { CitiesSection } from './sections/CitiesSection'
 export const RootPage = () => {
   const { data: cityList } = useCityList({})
   const { data: chartData, isPending, isError } = usePopulationChartData({})
-
-  console.log('data', chartData)
-
-  console.log('isPending', isPending)
-  console.log('isError', isError)
   const [selectedCity] = useAtom(selectedCityAtom)
   // get city name from city code(atom)
   const cityName =
