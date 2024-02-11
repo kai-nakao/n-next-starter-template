@@ -2,7 +2,6 @@ import axios from 'axios'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { okayamaCityURL } from '@/server/handlers/cities/get/const'
-import { City } from '@/server/models/City'
 
 const getCities = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
