@@ -1,10 +1,6 @@
 import axios from 'axios'
 import { z } from 'zod'
 
-import { City } from '@/server/models/City'
-
-import { Population } from '../models/Population'
-import { Wage } from '../models/Wage'
 import { procedure, router } from '../trpc'
 
 export const appRouter = router({
