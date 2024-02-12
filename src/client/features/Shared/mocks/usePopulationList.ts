@@ -1,5 +1,5 @@
 export const populationMock = {
-  usePopulationChartData: jest.fn(() => ({
+  usePopulationChartData: vi.fn(() => ({
     data: [
       {
         year: 1985,

@@ -1,5 +1,5 @@
 export const cityMock = {
-  useCityList: jest.fn(() => ({
+  useCityList: vi.fn(() => ({
     data: [
       {
         prefCode: 33,
