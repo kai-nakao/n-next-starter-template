@@ -19,6 +19,6 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "vitest.config.mts", "vitest.setup.mts"],
   "exclude": ["node_modules"]
 }
