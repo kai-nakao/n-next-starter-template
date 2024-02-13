@@ -5,8 +5,8 @@ import { populationMock } from '@/client/features/Shared/mocks/usePopulationList
 
 import { RootPage } from '../main'
 
-jest.mock('../sections/CitiesSection/react-queries/cities', () => cityMock)
-jest.mock(
+vi.mock('../sections/CitiesSection/react-queries/cities', () => cityMock)
+vi.mock(
   '../../../Shared/sections/ChartSection/react-queries/populations',
   () => populationMock,
 )

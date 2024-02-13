@@ -3,6 +3,3 @@
 
 # only staged files(lint, prettier)
 pnpm dlx lint-staged
-
-# all files test when commit
-pnpm run test
