@@ -3,16 +3,17 @@ import { z } from 'zod'
 
 import { procedure, router } from '../trpc'
 
+const apiBaseUrl =
+  `${process.env.VERCEL_URL}/api` || 'http://localhost:3000/api'
+
 export const appRouter = router({
   cityList: procedure.query(async () => {
-    const citiesData = await axios.get<City[]>(
-      'http://localhost:3000/api/getCities',
-    )
+    const citiesData = await axios.get<City[]>(`${apiBaseUrl}/getCities`)
     return citiesData.data
   }),
   lIndustry: procedure.query(async () => {
     const lIndustryData = await axios.get<LIndustry[]>(
-      'http://localhost:3000/api/getLIndustries',
+      `${apiBaseUrl}/getLIndustries`,
     )
     return lIndustryData.data
   }),
@@ -25,7 +26,7 @@ export const appRouter = router({
     .query(async (opts) => {
       const lIndustryCode = opts.input.lIndustryCode
       const mIndustryData = await axios.get<MIndustry[]>(
-        `http://localhost:3000/api/getMIndustries?lIndustryCode=${lIndustryCode}`,
+        `${apiBaseUrl}/getMIndustries?lIndustryCode=${lIndustryCode}`,
       )
       return mIndustryData.data
     }),
@@ -38,7 +39,7 @@ export const appRouter = router({
     .query(async (opts) => {
       const ciyCode = opts.input.cityCode
       const populationData = await axios.get<Population[]>(
-        `http://localhost:3000/api/getPopulations?cityCode=${ciyCode}`,
+        `${apiBaseUrl}/getPopulations?cityCode=${ciyCode}`,
       )
       return populationData.data
     }),
@@ -55,7 +56,7 @@ export const appRouter = router({
       const wageAge = opts.input.wageAge
       const sicCode = opts.input.sicCode
       const wagesData = await axios.get<Wage[]>(
-        `http://localhost:3000/api/getWages?simcCode=${simcCode}&wageAge=${wageAge}&sicCode=${sicCode}`,
+        `${apiBaseUrl}/getWages?simcCode=${simcCode}&wageAge=${wageAge}&sicCode=${sicCode}`,
       )
       return wagesData.data
     }),
