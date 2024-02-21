@@ -5,6 +5,7 @@ import { useCityList } from '@/client/features/Main/RootPage/sections/CitiesSect
 import { ChartSection } from '@/client/features/Shared/sections/ChartSection'
 import { usePopulationChartData } from '@/client/features/Shared/sections/ChartSection/react-queries/populations'
 
+import { RootHead } from './Head'
 import { CitiesSection } from './sections/CitiesSection'
 
 export const RootPage = () => {
@@ -17,11 +18,19 @@ export const RootPage = () => {
     '未選択'
 
   return (
-    <main className="flex flex-col justify-center">
-      <CitiesSection />
-      <section className="flex justify-center">
-        <ChartSection graphName={`${cityName}のグラフ`} chartData={chartData} />
-      </section>
-    </main>
+    <>
+      {/* per page Head */}
+      <RootHead />
+
+      <main className="flex flex-col justify-center">
+        <CitiesSection />
+        <section className="flex justify-center">
+          <ChartSection
+            graphName={`${cityName}のグラフ`}
+            chartData={chartData}
+          />
+        </section>
+      </main>
+    </>
   )
 }
