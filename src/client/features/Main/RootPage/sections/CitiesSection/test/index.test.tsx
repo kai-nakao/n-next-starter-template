@@ -4,7 +4,7 @@ import { cityMock } from '@/client/features/Shared/mocks/useCityList'
 
 import { CitiesSection } from '..'
 
-jest.mock('@/client/react-queries/cities', () => cityMock)
+vi.mock('../react-queries/cities', () => cityMock)
 test('if check 笠岡市 click, then checked 笠岡市', () => {
   render(<CitiesSection />)
   fireEvent.click(screen.getByLabelText('笠岡市'))

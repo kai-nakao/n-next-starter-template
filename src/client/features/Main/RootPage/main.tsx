@@ -1,28 +1,36 @@
 import { useAtom } from 'jotai'
 
 import { selectedCityAtom } from '@/client/atoms/cityAtoms'
+import { useCityList } from '@/client/features/Main/RootPage/sections/CitiesSection/react-queries/cities'
 import { ChartSection } from '@/client/features/Shared/sections/ChartSection'
-import { useCityList } from '@/client/react-queries/cities'
-import { usePopulationChartData } from '@/client/react-queries/populations'
+import { usePopulationChartData } from '@/client/features/Shared/sections/ChartSection/react-queries/populations'
 
+import { RootHead } from './Head'
 import { CitiesSection } from './sections/CitiesSection'
 
 export const RootPage = () => {
   const { data: cityList } = useCityList({})
-  const { data: chartData } = usePopulationChartData({})
-
+  const { data: chartData, isPending, isError } = usePopulationChartData({})
   const [selectedCity] = useAtom(selectedCityAtom)
   // get city name from city code(atom)
   const cityName =
-    cityList?.find((city: City) => city.cityCode === selectedCity)?.cityName ||
+    cityList?.find((city) => city.cityCode === selectedCity)?.cityName ||
     '未選択'
 
   return (
-    <main className="flex flex-col justify-center ">
-      <CitiesSection />
-      <section className="flex justify-center">
-        <ChartSection graphName={`${cityName}のグラフ`} chartData={chartData} />
-      </section>
-    </main>
+    <>
+      {/* per page Head */}
+      <RootHead />
+
+      <main className="flex flex-col justify-center">
+        <CitiesSection />
+        <section className="flex justify-center">
+          <ChartSection
+            graphName={`${cityName}のグラフ`}
+            chartData={chartData}
+          />
+        </section>
+      </main>
+    </>
   )
 }

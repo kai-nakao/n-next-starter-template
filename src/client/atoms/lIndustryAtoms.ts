@@ -1,3 +1,3 @@
 import { atom } from 'jotai'
 
-export const selectedLIndustryAtom = atom<string>('A')
+export const selectedLIndustryAtom = atom<string>('E')

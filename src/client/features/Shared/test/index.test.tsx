@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import { expect, test } from 'vitest'
 
 import { ChartSection } from '../sections/ChartSection'
 test('if graph data is empty, then show データ取得中...', () => {

@@ -23,26 +23,22 @@
         "newlines-between": "always"
       }
     ],
-    "strict-dependencies/strict-dependencies": [
+    "import/no-restricted-paths": [
       "error",
-      [
-        {
-          "module": "src/features/*/components/**/*",
-          "allowReferenceFrom": ["src/features/*/components/index.tsx"],
-          // features/*/components/ any file can import other files from the same folder
-          "allowSameModule": true
-        },
-        {
-          "module": "src/features/*/components/*/index.tsx",
-          "allowReferenceFrom": ["src/pages/**/*"],
-          "allowSameModule": false
-        },
-        {
-          "module": "src/features/*/functions/**/*",
-          "allowReferenceFrom": ["src/features/*/components/**/*"],
-          "allowSameModule": true
-        }
-      ]
+      {
+        "zones": [
+          {
+            "from": "./src/client/**/*",
+            "target": "./src/server/**/*",
+            "message": "client dir can't import server dir"
+          },
+          {
+            "from": "./src/server/**/*",
+            "target": "./src/client/**/*",
+            "message": "server dir can't import client dir"
+          }
+        ]
+      }
     ],
     "unused-imports/no-unused-imports": "warn"
   }

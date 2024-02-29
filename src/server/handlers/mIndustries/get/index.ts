@@ -1,6 +1,5 @@
+import axios from 'axios'
 import { NextApiRequest, NextApiResponse } from 'next'
-
-import { getMIndustry } from '@/client/react-queries/MediumIndustries/function'
 
 const getMIndustries = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
@@ -16,6 +15,19 @@ const getMIndustries = async (req: NextApiRequest, res: NextApiResponse) => {
     res.setHeader('Allow', ['GET'])
     res.status(405).end(`Method ${req.method} Not Allowed`)
   }
+}
+
+const getMIndustry = async (lIndustryCode: string): Promise<MIndustry> => {
+  const response = await axios.get(
+    `https://opendata.resas-portal.go.jp/api/v1/industries/middle?sicCode=${lIndustryCode}`,
+    {
+      headers: {
+        'X-API-KEY': process.env.API_KEY,
+      },
+    },
+  )
+
+  return response.data
 }
 
 export default getMIndustries

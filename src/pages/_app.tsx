@@ -1,19 +1,27 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { useAtom } from 'jotai'
 
+import { queryClientAtom, trpcClientAtom } from '@/client/atoms/clientAtoms'
 import { Header } from '@/client/features/Layout/Header'
+import { trpc } from '@/utils/trpc'
 
-import type { AppProps } from 'next/app'
 import '@/client/styles/globals.css'
 
-const queryClient = new QueryClient()
+import type { AppProps, AppType } from 'next/app'
 
-export default function App({ Component, pageProps }: AppProps) {
+const App: AppType = ({ Component, pageProps }: AppProps) => {
+  const [queryClient] = useAtom(queryClientAtom)
+  const [trpcClient] = useAtom(trpcClientAtom)
   return (
-    <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={true} />
-      <Header />
-      <Component {...pageProps} />
-    </QueryClientProvider>
+    <trpc.Provider client={trpcClient} queryClient={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={true} />
+        <Header />
+        <Component {...pageProps} />
+      </QueryClientProvider>
+    </trpc.Provider>
   )
 }
+
+export default App
