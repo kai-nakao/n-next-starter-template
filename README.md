@@ -7,6 +7,7 @@ https://n-next-starter-template.vercel.app/
 ---
 
 APIを使用することを想定したので、無料のRESAS APIを使用しました。
+
 https://opendata.resas-portal.go.jp/
 
 > RESAS(地域経済分析システム)に掲載しているデータをプログラムが取得できる機能をAPIで提供致します！
