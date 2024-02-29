@@ -31,6 +31,11 @@ featuresディレクトリを採用。
 pagesディレクト(api routeも同様)にはエントリーポイントしか置かないようにしています。
 また、pageごとにHeadを書くことを忘れないようにPageごとのディレクトリにHead.tsxを作成。
 
+参考
+
+https://www.youtube.com/watch?v=XdTWmDyJoCc&t=500s
+
+https://zenn.dev/sakito/articles/af87061a5016e6
 
 ### テスト
 ---
