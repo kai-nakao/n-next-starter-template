@@ -1,10 +1,5 @@
 export function getBaseUrl() {
-  if (typeof window !== 'undefined')
-    // browser should use relative path
-    return ''
-  if (process.env.VERCEL_URL)
-    // reference for vercel.com
-    return `https://${process.env.VERCEL_URL}`
-  // localhostを想定
-  return `http://localhost:${process.env.PORT ?? 3000}`
+  if (typeof window !== 'undefined') return ''
+  if (process.env.NODE_ENV === 'development') return 'http://localhost:3000'
+  return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
 }
