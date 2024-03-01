@@ -1,18 +1,20 @@
 import axios from 'axios'
 import { z } from 'zod'
 
+import { getBaseUrl } from '@/utils/getBaseURL'
+
 import { procedure, router } from '../trpc'
+
+const baseURL = `${getBaseUrl()}/api`
 
 export const appRouter = router({
   cityList: procedure.query(async () => {
-    const citiesData = await axios.get<City[]>(
-      'http://localhost:3000/api/getCities',
-    )
+    const citiesData = await axios.get<City[]>(`${baseURL}/getCities`)
     return citiesData.data
   }),
   lIndustry: procedure.query(async () => {
     const lIndustryData = await axios.get<LIndustry[]>(
-      'http://localhost:3000/api/getLIndustries',
+      `${baseURL}/getLIndustries`,
     )
     return lIndustryData.data
   }),
@@ -25,7 +27,7 @@ export const appRouter = router({
     .query(async (opts) => {
       const lIndustryCode = opts.input.lIndustryCode
       const mIndustryData = await axios.get<MIndustry[]>(
-        `http://localhost:3000/api/getMIndustries?lIndustryCode=${lIndustryCode}`,
+        `${baseURL}/getMIndustries?lIndustryCode=${lIndustryCode}`,
       )
       return mIndustryData.data
     }),
@@ -38,7 +40,7 @@ export const appRouter = router({
     .query(async (opts) => {
       const ciyCode = opts.input.cityCode
       const populationData = await axios.get<Population[]>(
-        `http://localhost:3000/api/getPopulations?cityCode=${ciyCode}`,
+        `${baseURL}/getPopulations?cityCode=${ciyCode}`,
       )
       return populationData.data
     }),
@@ -55,7 +57,7 @@ export const appRouter = router({
       const wageAge = opts.input.wageAge
       const sicCode = opts.input.sicCode
       const wagesData = await axios.get<Wage[]>(
-        `http://localhost:3000/api/getWages?simcCode=${simcCode}&wageAge=${wageAge}&sicCode=${sicCode}`,
+        `${baseURL}/getWages?simcCode=${simcCode}&wageAge=${wageAge}&sicCode=${sicCode}`,
       )
       return wagesData.data
     }),
